@@ -194,18 +194,18 @@ class SmartFundingAgent:
         else:
             # Default to DeepSeek
             deepseek_model_name = os.getenv("DEEPSEEK_MODEL", "deepseek-chat")
-        self.llm = ChatDeepSeek(
+            self.llm = ChatDeepSeek(
                 model=deepseek_model_name,
-            temperature=0,
-            base_url=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"),
-            api_key=os.getenv("DEEPSEEK_API_KEY")
-        )
-            print(f"🤖 Using LLM provider: DeepSeek | model={deepseek_model_name}")
+                temperature=0,
+                base_url=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"),
+                api_key=os.getenv("DEEPSEEK_API_KEY")
+            )
+            # print(f"🤖 Using LLM provider: DeepSeek | model={deepseek_model_name}")
 
         # Import tools
         try:
-        from tools import SearchFundingTool, CheckEligibilityTool, WebSearchTool
-        self.tools = [SearchFundingTool, CheckEligibilityTool, WebSearchTool]
+            from tools import SearchFundingTool, CheckEligibilityTool, WebSearchTool
+            self.tools = [SearchFundingTool, CheckEligibilityTool, WebSearchTool]
         except ImportError:
             print("⚠️ Warning: Could not import tools. Some functionality may be limited.")
             self.tools = []
