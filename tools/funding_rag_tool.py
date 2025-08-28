@@ -1,18 +1,4 @@
 # funding_rag_tool.py
-import sys
-import sqlite3
-
-# 检查 SQLite 版本并尝试使用 pysqlite3
-sqlite_version = sqlite3.sqlite_version_info
-if sqlite_version < (3, 35, 0):
-    try:
-        # 尝试导入 pysqlite3
-        __import__('pysqlite3')
-        sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-        print("使用 pysqlite3 替代系统 sqlite3")
-    except ImportError:
-        print(f"警告：SQLite 版本 {sqlite3.sqlite_version} 可能不兼容 ChromaDB")
-
 # 其余原有的导入
 import os
 import pandas as pd

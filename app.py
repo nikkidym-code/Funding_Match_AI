@@ -4,9 +4,7 @@ from agents.funding_agent import SmartFundingAgent
 from tools.funding_rag_tool import build_vector_store
 import os
 import json
-import sys
-__import__('pysqlite3')
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 
 # 页面配置
 st.set_page_config(
