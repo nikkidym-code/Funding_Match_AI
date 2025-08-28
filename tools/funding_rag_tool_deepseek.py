@@ -7,6 +7,10 @@ from chromadb import PersistentClient
 from langchain.tools import StructuredTool
 from pydantic import BaseModel, Field
 
+import sys
+__import__('pysqlite3')
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 load_dotenv()
 
 # Initialize ChromaDB
