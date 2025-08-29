@@ -1,0 +1,8 @@
+# Ignore environment variables file
+.env
+
+# 如果你有多个环境文件也一并忽略
+*.env
+
+# 忽略 Streamlit 本地 secrets
+.streamlit/secrets.toml
